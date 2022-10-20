@@ -1,0 +1,20 @@
+
+.btn {
+
+    padding: .5em 1em;
+    color:#333333;
+    border-color:#ffaa22;
+    border-top-left-radius:6px;
+    border-top-right-radius:6px;
+    border-bottom-left-radius:6px;
+    border-bottom-right-radius:6px;
+    box-shadow: 0px 1px 0px 0px #fff6af;
+    text-shadow: 0px 1px 0px #ffee66;
+    text-decoration: none;
+    background:linear-gradient(#ffec64, #ffab23);
+  }
+  
+  .btn:hover {
+    background: linear-gradient(#ffab23, #ffec64);
+  }
+                
