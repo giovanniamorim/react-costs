@@ -1,13 +1,13 @@
 .container {
-    max-width: 1200px;
+    width: 1200px;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
+    margin: auto;
     flex-wrap: wrap;
 }
 
 .minHeight {
-    min-height: 90%;
+    min-height: 75%;
 }
 
 .start {
