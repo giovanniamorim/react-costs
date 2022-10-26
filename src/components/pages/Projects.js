@@ -19,23 +19,40 @@ const Projects = () => {
     if(location.state){
         message = location.state.message
     }
-useEffect(() => {
-    setTimeout(() => {
-        fetch('http://localhost:5000/projects', {
-            method: 'GET',
-            headers: {
-                'Contenty-Type': 'application/json'
-            },
-        })
-            .then((res) => res.json())
-            .then( data => {
-                console.log(data)
-                setProjects(data)
-                setRemoveLoading(true)
+
+    useEffect(() => {
+        setTimeout(() => {
+            fetch('http://localhost:5000/projects', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
             })
-            .catch((err) => console.log(err)) 
-    }, 1500);
-}, [])
+                .then((res) => res.json())
+                .then( data => {
+                    console.log(data)
+                    setProjects(data)
+                    setRemoveLoading(true)
+                })
+                .catch((err) => console.log(err)) 
+        }, 300);
+    }, [])
+
+
+    const removeProject = (id) => {
+        fetch(`http://localhost:5000/projects/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then((resp) => resp.json())
+            .then((data) => {
+                setProjects(projects.filter((project) => project.id !== id))
+                // mensagem de remoção
+            })
+            .catch(err => console.log(err))
+    }
 
     return (
         <div className={styles.project_container}>
@@ -53,6 +70,7 @@ useEffect(() => {
                             budget={project.budget}
                             category={project.category ? project.category.name : 'Categoria não definida'}
                             key={project.id}
+                            handleRemove={removeProject}
                         />
                     ))
                 }
