@@ -34,7 +34,7 @@ const Projects = () => {
                     setProjects(data)
                     setRemoveLoading(true)
                 })
-                .catch((err) => console.log(err)) 
+                .catch((err) => console.log("Erro na alista de projetos",err)) 
         }, 300);
     }, [])
 
@@ -51,7 +51,7 @@ const Projects = () => {
                 setProjects(projects.filter((project) => project.id !== id))
                 // mensagem de remoção
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log("Erro na alista de projetos", err))
     }
 
     return (

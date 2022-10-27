@@ -1,14 +1,27 @@
 {
   "projects": [
     {
-      "name": "Projeto Atualizado",
-      "budget": "1500",
+      "name": "Smart Cache",
+      "budget": "15008",
       "category": {
         "id": "3",
         "name": "Desenvolvimento"
       },
-      "cost": 0,
-      "services": [],
+      "cost": 6245,
+      "services": [
+        {
+          "name": "Teste",
+          "cost": "1245",
+          "description": "Teste",
+          "id": "5524586a-b372-4845-93e2-364c5bdedbb0"
+        },
+        {
+          "name": "Criar site",
+          "cost": "5000",
+          "description": "Criação de site oficial",
+          "id": "bb8c4042-a745-49c5-b207-49356dea93ef"
+        }
+      ],
       "id": 2
     }
   ],
